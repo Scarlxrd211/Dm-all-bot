@@ -45,7 +45,7 @@ def panel(name, bot_id, status, guild_id, gm_count, gname, wl):
 
 async def send_message(guild_id, bot, message, member, whitelist):
     guild = bot.get_guild(int(guild_id))
-    message = message.replace("/", "\n")
+    message = message.replace("|", "\n")
 
     if guild:
         try:
@@ -79,7 +79,7 @@ async def on_ready():
     clear()
     count = 0
     server_id = int(input(f'{B}[?] Enter Server ID: '))
-    message = str(input(rf'{B}[?] Message You Want To Sent (/ for line feed): '))
+    message = str(input(rf'{B}[?] Message You Want To Sent (| for line feed): '))
     whitelist = str(input(f'{B}[?] Do You Want Enable Whitelist ?: '))
     wl = ""
     if whitelist.lower() == 'yes' or whitelist.lower() == 'y':
